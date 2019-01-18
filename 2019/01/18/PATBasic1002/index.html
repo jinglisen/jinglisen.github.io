@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="个人博客：小景哥哥   $(document).ready(function(){      hljs.initHighlightingOnLoad();  });读入一个自然数n，计算其各位数字之和，用汉语拼音写出和的每一位数字。输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。这里保证n小于10^100。输出格式：在一行内输出n的各位数字之和的每一位，拼音数字间有1 空格，但一行中">
+<meta name="keywords" content="IT小哥哥">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1002. 写出这个数 (20)-浙大PAT乙级真题java实现">
+<meta property="og:url" content="http://jinglisen.fun/2019/01/18/PATBasic1002/index.html">
+<meta property="og:site_name" content="小景哥哥">
+<meta property="og:description" content="个人博客：小景哥哥   $(document).ready(function(){      hljs.initHighlightingOnLoad();  });读入一个自然数n，计算其各位数字之和，用汉语拼音写出和的每一位数字。输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。这里保证n小于10^100。输出格式：在一行内输出n的各位数字之和的每一位，拼音数字间有1 空格，但一行中">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-18T14:57:23.018Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="1002. 写出这个数 (20)-浙大PAT乙级真题java实现">
+<meta name="twitter:description" content="个人博客：小景哥哥   $(document).ready(function(){      hljs.initHighlightingOnLoad();  });读入一个自然数n，计算其各位数字之和，用汉语拼音写出和的每一位数字。输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。这里保证n小于10^100。输出格式：在一行内输出n的各位数字之和的每一位，拼音数字间有1 空格，但一行中">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>1002. 写出这个数 (20)-浙大PAT乙级真题java实现</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">小景哥哥</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
+
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/home">Home</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="/life">Life</a></li>
+         
+          <li><a href="/pat">PAT</a></li>
+         
+          <li><a href="/剑指offer">剑指offer</a></li>
+         
+          <li><a href="/archives">Archives</a></li>
+         
+          <li><a href="https://github.com/jinglisen">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2019/01/16/PATBasic1001/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$("#i-next").toggle();" onmouseout="$("#i-next").toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$("#i-top").toggle();" onmouseout="$("#i-top").toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$("#i-share").toggle();" onmouseout="$("#i-share").toggle();" onclick="$("#share").toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jinglisen.fun/2019/01/18/PATBasic1002/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&text=1002. 写出这个数 (20)-浙大PAT乙级真题java实现"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&title=1002. 写出这个数 (20)-浙大PAT乙级真题java实现"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&is_video=false&description=1002. 写出这个数 (20)-浙大PAT乙级真题java实现"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=1002. 写出这个数 (20)-浙大PAT乙级真题java实现&body=Check out this article: http://jinglisen.fun/2019/01/18/PATBasic1002/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&title=1002. 写出这个数 (20)-浙大PAT乙级真题java实现"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&title=1002. 写出这个数 (20)-浙大PAT乙级真题java实现"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&title=1002. 写出这个数 (20)-浙大PAT乙级真题java实现"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&title=1002. 写出这个数 (20)-浙大PAT乙级真题java实现"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&name=1002. 写出这个数 (20)-浙大PAT乙级真题java实现&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        1002. 写出这个数 (20)-浙大PAT乙级真题java实现
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">小景哥哥</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2019-01-18T14:51:00.000Z" itemprop="datePublished">2019-01-18</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p><link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.6.0/styles/github.min.css"></p>
+<p><script src="//cdn.bootcss.com/highlight.js/9.6.0/highlight.min.js"></script><br>个人博客：<a href="http://www.jinglisen.top" rel="nofollow" target="_blank">小景哥哥</a></p>
+<p><script type="text/javascript"><br>  $(document).ready(function(){<br>      hljs.initHighlightingOnLoad();<br>  });<br></script><br>读入一个自然数n，计算其各位数字之和，用汉语拼音写出和的每一位数字。<br>输入格式：每个测试输入包含1个测试用例，即给出自然数n的值。这里保证n小于10^100。<br>输出格式：<br>在一行内输出n的各位数字之和的每一位，拼音数字间有1 空格，但一行中最后一个拼音数字后没有空格。</p>
+<p></p><p class="code-caption" data-lang="ava" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy=""><span class="code-caption-label"></span><a class="code-caption-copy"></a></p><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入样例</span><br><span class="line">1234567890987654321123456789</span><br><span class="line">输出样例</span><br><span class="line">yi san wu</span><br></pre></td></tr></table></figure><p></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Java代码实现：</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">calculate</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> value = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(str.length() &gt; <span class="number">0</span>)&#123;</span><br><span class="line">      value = value + (<span class="keyword">int</span>)(str.charAt(<span class="number">0</span>)) - <span class="number">48</span>;</span><br><span class="line">      str=str.substring(<span class="number">1</span>,str.length());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">convert</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (n) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"ling"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"yi"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"er"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"san"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"si"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"wu"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"liu"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"qi"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">8</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"ba"</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">9</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"jiu"</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">result</span><span class="params">(<span class="keyword">int</span> value)</span></span>&#123;</span><br><span class="line">    String result = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">while</span>(value &gt; <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="keyword">int</span> temp = value % <span class="number">10</span>;</span><br><span class="line">      value = value/<span class="number">10</span>;</span><br><span class="line">      <span class="keyword">if</span>(result == <span class="string">""</span>)&#123;</span><br><span class="line">        result = convert(temp) + <span class="string">""</span> + result;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        result = convert(temp) + <span class="string">" "</span> + result;</span><br><span class="line">      &#125;      </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    String str = in.nextLine();</span><br><span class="line">    Main m = <span class="keyword">new</span> Main();</span><br><span class="line">    System.out.println(m.result(m.calculate(str)));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/home">Home</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="/life">Life</a></li>
+         
+          <li><a href="/pat">PAT</a></li>
+         
+          <li><a href="/剑指offer">剑指offer</a></li>
+         
+          <li><a href="/archives">Archives</a></li>
+         
+          <li><a href="https://github.com/jinglisen">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jinglisen.fun/2019/01/18/PATBasic1002/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&text=1002. 写出这个数 (20)-浙大PAT乙级真题java实现"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&title=1002. 写出这个数 (20)-浙大PAT乙级真题java实现"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&is_video=false&description=1002. 写出这个数 (20)-浙大PAT乙级真题java实现"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=1002. 写出这个数 (20)-浙大PAT乙级真题java实现&body=Check out this article: http://jinglisen.fun/2019/01/18/PATBasic1002/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&title=1002. 写出这个数 (20)-浙大PAT乙级真题java实现"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&title=1002. 写出这个数 (20)-浙大PAT乙级真题java实现"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&title=1002. 写出这个数 (20)-浙大PAT乙级真题java实现"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&title=1002. 写出这个数 (20)-浙大PAT乙级真题java实现"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jinglisen.fun/2019/01/18/PATBasic1002/&name=1002. 写出这个数 (20)-浙大PAT乙级真题java实现&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$("#toc-footer").toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$("#share-footer").toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$("#nav-footer").toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 小景哥哥
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/home">Home</a></li>
+         
+          <li><a href="/about">About</a></li>
+         
+          <li><a href="/life">Life</a></li>
+         
+          <li><a href="/pat">PAT</a></li>
+         
+          <li><a href="/剑指offer">剑指offer</a></li>
+         
+          <li><a href="/archives">Archives</a></li>
+         
+          <li><a href="https://github.com/jinglisen">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>
